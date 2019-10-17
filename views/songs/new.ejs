@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Express To-Do</title>
+    <title>Express-Songs</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
+
 <body>
-    <h1>New Todo</h1>
-    <form action="/skills" method="POST">
-        <input type="text" name="skill" autocomplete="off">
-        <button type="submit">Save Skill</button>
+    <h1>Add Song</h1>
+    <form action="/songs" method="POST">
+        <label> Song Name:
+            <input type="text" name="name" autocomplete="off">
+        </label>
+        <br>
+        <label> Artist Name:
+            <input type="text" name="artist" autocomplete="off">
+        </label>
+        <br>
+        <label> Genres:
+            <input type="text" name="genres" autocomplete="off">
+        </label>
+        <br>
+        <label>Favorite Song:
+            <input type="checkbox" name="favorite" checked>
+          </label>
+        <button type="submit">Save Song</button>
     </form>
 </body>
+
 </html>

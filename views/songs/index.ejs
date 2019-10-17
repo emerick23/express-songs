@@ -1,12 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Songs</title>
+    <link rel='stylesheet' href='/stylesheets/indexView/style.css' />
+    <script defer src='/javascripts/main.js'></script>
+    <title>Express-Songs</title>
 </head>
+
 <body>
-   <h1>Songs</h1>
+    <nav>
+        <a href='/songs'>Songs Index</a>
+        <a href='/songs/add'>Add Song</a>
+    </nav>
+    <div class='container'>
+        <% songs.forEach(song => { %>
+            <div class='items'>
+                <div class='content'>
+                    <h3><%= song.name %></h3>
+                    <p>Artist: <%= song.artist %></p>
+                    <% if (song.genres) { %>
+                        <div class='genres'>
+                            <p>Genres:</p>
+                            <% song.genres.forEach(genre => { %>
+                                <p style='padding-left: 2px;'><%= genre %></p>
+                            <% }) %>
+                        </div>
+                    <form action='/songs/<%= song._id %>?_method=DELETE' method='POST'>
+                        <button>Delete Song</button>
+                    </form>
+                    <% } %>
+                </div>
+            </div>
+        <% }) %>
+    </div>
 </body>
+
 </html>

@@ -4,7 +4,7 @@ var Schema = mongoose.Schema
 var songSchema = new Schema({
     name: String,
     artist: String,
-    genres: [],
+    genres: [String],
     favorite: Boolean
 })
 

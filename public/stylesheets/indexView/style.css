@@ -1,0 +1,52 @@
+body {
+  background-color: lightcyan;
+  margin: 0px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: 
+    'nav'
+    'main';
+}
+
+nav {
+  background-color: lightgrey;
+  grid-area: nav;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container {
+  grid-area: main;
+  padding: 1%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 25px;
+}
+
+.items {
+  outline: 2px solid black;
+}
+
+.content {
+  padding: 10px;
+}
+
+a {
+  color: black;
+  padding: 15px 2px;
+}
+
+.genres>p {
+  display: inline-block;
+}
+
+p {
+  margin: 10px 0px;
+}
+
+h3 {
+  margin: 0px 0px 15px 0px;
+}
